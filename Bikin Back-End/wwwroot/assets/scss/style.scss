@@ -1,0 +1,347 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    border-bottom: 1px solid #0d6efd;
+    border-top: 1px solid #0d6efd;
+    background-color: #007aff;
+    
+
+
+    .row {
+        width: 100%;
+        height: 75px;
+
+        h2 {
+ 
+            a {
+                text-decoration: none;
+                color: #2d405f;
+            }
+        }
+
+        .service {
+
+
+            ul {
+                padding-left: 0;
+
+                li {
+                    list-style: none;
+                    margin: 10px;
+
+                    a {
+                        text-decoration: none;
+                        color: #2d405f;
+                        transition: 1s;
+
+                        &:hover {
+                            color: #3b4ef8;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#main-section {
+
+    .description {
+        width: 50%;
+        margin: 10% auto;
+
+        h1 {
+            margin: 0;
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 56px;
+            
+            color: #2d405f;
+        }
+
+        p {
+            margin: 15px 0 0 0;
+            font-size: 24px;
+            color: #2d405f;
+        }
+
+        .image {
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+#little-card{
+    background-color: #466393;
+    padding: 50px;
+
+
+    .about *{
+       margin-top: 25px;
+    }
+    .about{
+        a{
+        
+           background:  rgba(255, 255, 255, 0.05);
+           border-radius: 25px;
+           color: white;
+           
+        }
+    }
+
+    .cards{
+        i{
+            font-size: 40px;
+            color: #b6bdfc;
+            margin-bottom: 10px;
+        }
+
+        p{
+            font-size: 20px;
+            font-weight: bold;
+        }
+    }
+}
+#carousel-section{
+    
+    .row{
+        height: 75px;
+
+        img{
+            width: 75%;
+        }
+
+        .companys{
+            
+            transition: .6s;
+
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+    }
+    
+}
+#service-card{
+    background-color: #2d405f;
+    
+
+    .punkt *{
+        margin-bottom: 25px;
+    }
+    .punkt{
+        
+        background-color: white;
+        padding: 45px;
+        text-align: center;
+        border-radius: 20px;
+        margin-top: 25px;
+        transition: .5s;
+
+        &:hover{
+            transform: scale(1.1);
+        }
+
+        i{
+            width: 70px;
+            height: 70px;
+            background-color: whitesmoke;
+            color: #466393;
+            border-radius: 50%;
+            font-size: 20px;
+            padding: 25px;
+        }
+
+    }
+}
+
+#contacts{
+
+    background-color: whitesmoke;
+    .locations{
+        
+        .location *{
+            margin-top: 10px;
+        }
+        .location{
+            background-color: white;
+            margin-top: 25px;
+            padding: 0px;
+
+            strong{
+                color: #777777;
+            }
+        }
+        i{
+            color: #007aff;
+            font-size: 30px;
+        }
+    }
+
+    .message{
+        background-color: white;
+        padding: 25px;
+
+        input{
+            height: 50px;
+            margin-top: 25px;
+        }
+        textarea{
+            width: 100%;
+            margin-top: 25px;
+        }
+        .sub{
+            width: 100%;
+        }
+    }
+}
+
+footer{
+
+    .footer-part{
+        ul{
+            padding-left: 0;
+
+            li{
+                list-style: none;
+                margin: 10px;
+
+                a{
+                    text-decoration: none;
+                    color: black;
+                }
+            }
+        }
+    }
+    .send{
+        input{
+            display: inline-block;
+            height: 50px;
+        }
+        a{
+            height: 50px;
+            border-radius: 0px;
+        }
+    }
+
+    .endl{
+        width: 100%;
+        background-color: #f1f3ff;
+
+        i{
+            width: 40px;
+            height: 40px;
+            background-color: #e7eafe;
+            border-radius: 5px;
+            font-size: 10px;
+            padding: 15px;
+            color: #007aff;
+            transition: .5s;
+
+            &:hover{
+                background-color: #007aff;
+                color: #e7eafe;
+            }
+        }
+    }
+}
+
+@media screen and(min-width: 992px) {
+    .navbar-toggler {
+        display: none;
+
+    }
+    .about{
+        a{
+            width: 25%;
+        }
+        h2{
+            width: 75%;
+        }
+        p{
+            width: 75%;
+        }
+    }
+    
+}
+
+@media screen and(max-width: 992px) {
+    .service {
+        display: none;
+    }
+
+    #main-section{
+        .description{
+            width: 100%;
+
+            h1{
+                width: 100%;
+                font-size: 36px;
+            }
+        }
+    }
+    #little-card{
+
+        .about{
+            a{
+                width: 100%;
+            }
+        }
+        .cards{
+            margin-top: 50px;
+        }
+    }
+}
+@media screen and(min-width: 768px){
+    .message{
+        input{
+            width: 50%;
+        }
+    }
+}
+@media screen and(max-width: 768px){
+    #main-section{
+        .description{
+            margin: 25% auto;
+            width: 100%;
+
+            h1{
+                width: 100%;
+                font-size: 36px;
+            }
+        }
+    }
+    .about{
+        
+        h2{
+            width: 100%;
+        }
+        p{
+            width: 100%;
+        }
+    } 
+    
+    .send{
+        input{
+            width: 100%;
+        }
+        flex-wrap: wrap;
+        a{
+            width: 100%;
+        }
+    }
+    .message{
+        .input{
+            flex-wrap: wrap;
+            
+            input{
+                width: 100%;
+            }
+        }
+    }
+}

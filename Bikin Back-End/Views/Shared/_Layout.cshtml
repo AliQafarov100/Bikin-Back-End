@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="~/assets/scss/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar bg-light fixed-top">
+            <div class="container">
+                <div class="row align-items-center justify-content-between">
+                    <div class="logo col-lg-4 col-sm-4 w-25">
+                        <h2><a href="">@layoutservice.GetDatas().Result.FirstOrDefault(h => h.Key == "HeaderLogo").Value</a></h2>
+                    </div>
+                    <div class="service col-lg-8 ">
+                        <ul class="d-flex justify-content-between mt-3">
+                            <li><a href="">Home</a>  </li>
+                            <li><a href="">About</a>  </li>
+                            <li><a href="">Services</a>  </li>
+                            <li><a href="">Portfolio</a>  </li>
+                            <li><a href="">Team</a>  </li>
+                            <li><a href="">Pricing</a>  </li>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li><a asp-controller="Account" asp-action="Edit">@User.Identity.Name</a>  </li>
+                                <li><a asp-controller="Account" asp-action="Logout">Logout</a>  </li>
+                            }
+                            else
+                            {
+                                <li><a asp-controller="Account" asp-action="Register">Register</a>  </li>
+                                <li><a asp-controller="Account" asp-action="Login">Login</a>  </li>
+                            }
+                            <li><a href="" class="btn btn-primary">Get Started</a></li>
+                        </ul>
+
+                    </div>
+                    <button class="navbar-toggler col-sm-8 col-lg-8 w-25" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                        <span class="navbar-toggler-icon "></span>
+                    </button>
+                </div>
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Dropdown
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+    <footer class="">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="footer-part col-lg-2 py-3">
+                    <h3>@layoutservice.GetDatas().Result.FirstOrDefault(h => h.Key == "HeaderLogo").Value</h3>
+                    <p>A108 Adam Street</p>
+                    <p>
+                        New York, NY 535022 <br>
+                        United States
+                    </p>
+                    <p>
+                        <span style="color: #007aff;"> Phone: </span> @layoutservice.GetDatas().Result.FirstOrDefault(p => p.Key == "Phone").Value <br>
+                        <span style="color: #007aff;"> Email: </span> @layoutservice.GetDatas().Result.FirstOrDefault(e => e.Key == "Email").Value
+                    </p>
+                </div>
+                <div class="footer-part col-lg-2 py-3">
+                    <strong>Useful Links</strong>
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">About us</a></li>
+                        <li><a href="">Services</a></li>
+                        <li><a href="">Terms of service</a></li>
+                        <li><a href="">Privacy policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-part col-lg-2 py-3">
+                    <strong>Our Services</strong>
+                    <ul>
+                        <li><a href="">Web Design</a></li>
+                        <li><a href="">Web Development</a></li>
+                        <li><a href="">Product Management</a></li>
+                        <li><a href="">Marketing</a></li>
+                        <li><a href="">Graphic Design</a></li>
+                    </ul>
+                </div>
+                <div class="footer-part col-lg-3 py-3">
+                    <strong>Join Our Newsletter</strong>
+                    <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+                    <div class="send d-flex">
+                        <input type="text">
+                        <a class="btn btn-primary">Subscribe</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="endl py-4">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="right col-lg-6 col-md-12 col-sm-12 ">
+                        <p>
+                            © Copyright Bikin. All Rights Reserved <br>
+                            Designed by <a href="">BootstrapMade    </a>
+                        </p>
+                    </div>
+                    <div class="icons col-lg-6 col-md-12 col-sm-12 d-flex justify-content-end">
+                        <div class="media">
+                            <i class="@layoutservice.GetDatas().Result.FirstOrDefault(i => i.Key == "TwitterIcon").Value"></i>
+                            <i class="@layoutservice.GetDatas().Result.FirstOrDefault(i => i.Key == "FacebookIcon").Value"></i>
+                            <i class="@layoutservice.GetDatas().Result.FirstOrDefault(i => i.Key == "InstagramIcon").Value"></i>
+                            <i class="@layoutservice.GetDatas().Result.FirstOrDefault(i => i.Key == "InvisionIcon").Value"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>
